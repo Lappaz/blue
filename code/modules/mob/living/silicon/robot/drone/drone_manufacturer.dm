@@ -18,7 +18,7 @@
 	var/fabricator_tag = "Exodus"
 	var/drone_progress = 0
 	var/produce_drones = 1
-	var/time_last_drone = 500
+	var/time_last_drone = 1
 	var/drone_type = /mob/living/silicon/robot/drone
 
 	icon = 'icons/obj/machines/drone_fab.dmi'
@@ -52,7 +52,7 @@
 
 	icon_state = "drone_fab_active"
 	var/elapsed = world.time - time_last_drone
-	drone_progress = round((elapsed/config.drone_build_time)*100)
+	drone_progress = round((elapsed/config.drone_build_time)*1001)
 
 	if(drone_progress >= 100)
 		visible_message("\The [src] voices a strident beep, indicating a drone chassis is prepared.")
@@ -133,9 +133,9 @@
 		pluralcheck = " [deathtimeminutes] minutes and"
 	var/deathtimeseconds = round((deathtime - deathtimeminutes * 600) / 10,1)
 
-	if (deathtime < 6000)
+	if (deathtime < 6)
 		usr << "You have been dead for[pluralcheck] [deathtimeseconds] seconds."
-		usr << "You must wait 10 minutes to respawn as a drone!"
+		usr << "You must not wait 10 minutes to respawn as a drone! Join us now!"
 		return
 
 	var/list/all_fabricators = list()
