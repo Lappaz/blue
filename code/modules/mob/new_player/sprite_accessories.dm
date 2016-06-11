@@ -752,6 +752,21 @@
 		icon_state = "soghun_horns"
 		species_allowed = list("Unathi")
 
+	resomi
+		name = "Resomi Plumage"
+		icon_state = "resomi_default"
+		species_allowed = list("Resomi")
+
+	resomi_ears
+		name = "Resomi Ears"
+		icon_state = "resomi_ears"
+		species_allowed = list("Resomi")
+
+	resomi_excited
+		name = "Resomi Spiky"
+		icon_state = "resomi_spiky"
+		species_allowed = list("Resomi")
+
 	skr_tentacle_m
 		name = "Skrell Male Tentacles"
 		icon_state = "skrell_hair_m"

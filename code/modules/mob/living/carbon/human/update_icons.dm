@@ -277,7 +277,7 @@ var/global/list/damage_icon_parts = list()
 		else if(part.status & ORGAN_DEAD)
 			icon_key += "4"
 		else
-			icon_key += "1[part.tattoo][part.tattoo2]"
+			icon_key += "1[part.tattoo][part.tattoo2][part.have_hair]"
 
 	icon_key = "[icon_key][husk ? 1 : 0][fat ? 1 : 0][hulk ? 1 : 0][skeleton ? 1 : 0]"
 
@@ -933,6 +933,11 @@ var/global/list/damage_icon_parts = list()
 		tail_icon = new/icon(icon = (species.tail_animation? species.tail_animation : 'icons/effects/species.dmi'))
 		tail_icon.Blend(skin_color, ICON_ADD)
 
+		// The following will not work with animated tails.
+		if(species.tail_hair)
+			var/icon/hair_icon = icon('icons/mob/human_races/r_resomi.dmi', "[species.tail]_[species.tail_hair]")
+			hair_icon.Blend(hair_icon, ICON_ADD)
+			tail_icon.Blend(skin_color, ICON_OVERLAY)
 		tail_icon_cache[icon_key] = tail_icon
 
 	return tail_icon

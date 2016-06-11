@@ -115,6 +115,10 @@ var/global/list/limb_icon_cache = list()
 					mob_icon.Blend(new/icon('icons/mob/tattoo.dmi', "[limb_name]_[tattoo]_[body_build]"), ICON_OVERLAY)
 				if(tattoo2)
 					mob_icon.Blend(new/icon('icons/mob/tattoo.dmi', "[limb_name]2_[tattoo2]_[body_build]"), ICON_OVERLAY)
+				if(have_hair)
+					var/icon/hair_icon = icon(owner.species.icobase, "[limb_name]_feathers_[gender][body_build]")
+					hair_icon.Blend(owner.hair_color, ICON_ADD)
+					mob_icon.Blend(hair_icon, ICON_OVERLAY)
 
 	dir = EAST
 	icon = mob_icon

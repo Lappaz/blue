@@ -55,6 +55,7 @@
 	var/can_stand
 	var/tattoo = 0
 	var/tattoo2 = 0
+	var/have_hair = 0
 
 /obj/item/organ/external/Destroy()
 	if(parent && parent.children)
