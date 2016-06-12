@@ -937,7 +937,7 @@ var/global/list/damage_icon_parts = list()
 		if(species.tail_hair)
 			var/icon/hair_icon = icon('icons/mob/human_races/r_resomi.dmi', "[species.tail]_[species.tail_hair]")
 			hair_icon.Blend(hair_icon, ICON_ADD)
-			tail_icon.Blend(skin_color, ICON_OVERLAY)
+			tail_icon.Blend(hair_color, ICON_OVERLAY)
 		tail_icon_cache[icon_key] = tail_icon
 
 	return tail_icon
